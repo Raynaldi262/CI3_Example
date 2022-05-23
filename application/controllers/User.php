@@ -9,6 +9,9 @@ class User extends CI_Controller{
 
     public function index()
     {
+	 //try caching pages
+	$this->output->cache(5);
+
         $data['users'] = $this->user_model->get_all_user();
         $data['title'] = 'User';
         
