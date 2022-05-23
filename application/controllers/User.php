@@ -67,9 +67,13 @@ class User extends CI_Controller{
             $id = $this->user_model->insert_user();
 
             if($id){
+				log_message('info', 'User successful created');
                 redirect(base_url(),'refresh' );
             }else{
-                show_error("Error when insert user", 301);
+				log_message('error', 'User not created.');
+				show_error('Error when insert user', 301, $heading = 'An Error Was Encountered')
+
+                //show_error("Error when insert user", 301);
             }
         }else{
             $data['users'] = $this->user_model->get_all_user();
