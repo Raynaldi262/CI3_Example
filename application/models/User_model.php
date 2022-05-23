@@ -24,5 +24,12 @@ class User_model extends CI_Model{
         return $this->db->insert_id();
     }
 
+	// escaping queries https://codeigniter.com/userguide3/database/queries.html
+	
+	//Handlin errors	return an array containing its code and message
+	//if ( ! $this->db->simple_query('SELECT `example_field` FROM `example_table`'))
+	//{
+    //    $error = $this->db->error(); // Has keys 'code' and 'message'
+	//}
 }
 ?>
