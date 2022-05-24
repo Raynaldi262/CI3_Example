@@ -122,6 +122,108 @@
 
 			- str = (string) $str; // cast $str as a string
 
+9. Debuging code
+	Things such as var_dump(), print_r(), die()/exit() should not be included in your code unless it serves a specific purpose other than debugging
+	
+10. One file per class
+	Use separate files for each class, unless the classes are closely related. An example of a CodeIgniter file that contains multiple classes is the Xmlrpc library file.
 
+11. Whitespaces
+	Use tabs for whitespace in your code, not spaces. This may seem like a small thing, but using tabs instead of whitespace allows the developer 
+	looking at your code to have indentation at levels that they prefer and customize in whatever application they use. And as a side benefit,
+	it results in (slightly) more compact files, storing one tab character versus, say, four space characters.
+
+12. Line breaks
+	Files must be saved with Unix line breaks
+
+13. Code indenting
+	Use Allman style indenting. With the exception of Class declarations, braces are always placed on a line by themselves, and indented at the same level as the control statement that “owns” them.
+	Example
+		Correct
+			function foo($bar)
+			{
+				// ...
+			}
+
+			foreach ($arr as $key => $val)
+			{
+				// ...
+			}
+
+14. Bracket and  Parenthetic spacing
+	In general, parenthesis and brackets should not use any additional spaces. 
+	The exception is that a space should always follow PHP control structures that accept arguments with parenthesis 
+	(declare, do-while, elseif, for, foreach, if, switch, while), to help distinguish them from functions and increase readability.
+	Example
+		- $arr[$foo] = 'foo'; // no spaces around array keys
+		- foreach ($query->result() as $row) 
+		- function foo($bar) // no spaces around parenthesis in function declarations
+		  {
+
+		  }
+
+15. Localized text
+	CodeIgniter libraries should take advantage of corresponding language files whenever possible.
+	Example
+		incorrect
+			return "Invalid Selection";
+
+		correct
+			return $this->lang->line('invalid_selection');
+
+16. Private function & method
+	Methods and variables that are only accessed internally, such as utility and helper functions that your public methods use for code abstraction,
+	should be prefixed with an underscore.
+	Example
+		public function convert_text()
+		private function _convert_text()
+
+17. SHORT OPEN TAG
+	Always use full PHP opening tags, in case a server does not have short_open_tag enabled.
+	Example
+		Incorrect
+			<? echo $foo; ?>
+			<?=$foo?>
+		Correct
+			<?php echo $foo; ?>
+
+18. One statement perline
+	$foo = 'this';
+	$bar = 'that';
+	$bat = str_replace($foo, $bar, $bag);
+	
+19. String
+	Always use single quoted strings unless you need variables parsed
+	use braces to prevent greedy token parsing
+	You may also use double-quoted strings if the string contains single quotes, so you do not have to use escape characters.
+	Example
+		Incorrect
+			"My String"                                     // no variable parsing, so no use for double quotes
+			"My string $foo"                                // needs braces
+			'SELECT foo FROM bar WHERE baz = \'bag\''       // ugly
+		Correct
+			'My String'
+			"My string {$foo}"
+			"SELECT foo FROM bar WHERE baz = 'bag'"
+
+20. SQL Queries
+	SQL keywords are always capitalized: SELECT, INSERT, UPDATE, WHERE, AS, JOIN, ON, IN, etc.
+	Break up long queries into multiple lines for legibility, preferably breaking for each clause.
+
+	$query = $this->db->query("SELECT foo, bar, baz, foofoo, foobar AS raboof, foobaz
+					FROM exp_pre_email_addresses
+					WHERE foo != 'oof'
+					AND baz != 'zab'
+					ORDER BY foobaz
+					LIMIT 5, 100");
+
+
+
+
+
+
+
+
+	
 
 
