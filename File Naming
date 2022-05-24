@@ -1,0 +1,81 @@
+1. File Naming
+    Class files must be named in a Ucfirst-like manner, while any other file name (configurations, views, generic scripts, etc.)
+    should be in all lowercase.
+    Example
+      incorect
+        somelibrary.php
+        someLibrary.php
+        SOMELIBRARY.php
+        Some_Library.php
+
+        Application_config.php
+        Application_Config.php
+        applicationConfig.php
+
+      Correct
+        Somelibrary.php
+        Some_library.php
+
+        applicationconfig.php
+        application_config.php
+
+2. Class and Method Naming
+     - Class names should always start with an uppercase letter. Multiple words should be separated with an underscore, and not CamelCased
+       Example
+        incorrect
+          class superclass
+          class SuperClass
+
+         Correct
+          class Super_class
+
+      - Class methods should be entirely lowercased and named to clearly indicate their function, preferably including a verb. 
+        Try to avoid overly long and verbose names. Multiple words should be separated with an underscore.
+        Example
+          Incorrect 
+            function fileproperties()               // not descriptive and needs underscore separator
+            function fileProperties()               // not descriptive and uses CamelCase
+            function getfileproperties()            // Better!  But still missing underscore separator
+            function getFileProperties()            // uses CamelCase
+            function get_the_file_properties_from_the_file()        // wordy
+
+          Correct
+            function get_file_properties()  // descriptive, underscore separator, and all lowercase letters
+
+3. Variabels Names
+    Variables should contain only lowercase letters, use underscore separators, and be reasonably named to indicate their purpose and contents. 
+    Very short, non-word variables should only be used as iterators in for() loops.
+
+    Example
+      Incorrect
+        $j = 'foo';             // single letter variables should only be used in for() loops
+        $Str                    // contains uppercase letters
+        $bufferedText           // uses CamelCasing, and could be shortened without losing semantic meaning
+        $groupid                // multiple words, needs underscore separator
+        $name_of_last_city_used // too long
+      
+      Correct
+        for ($j = 0; $j < 10; $j++)
+        $str
+        $buffer
+        $group_id
+        $last_city
+
+4. Commenting
+    Use single line comments within code, leaving a blank line between large comment blocks and code.
+    Example 
+      // break up the string by newlines
+      $parts = explode("\n", $str);
+
+      // A longer comment that needs to give greater detail on what is
+      // occurring and why can use multiple single-line comments.  Try to
+      // keep the width reasonable, around 70 characters is the easiest to
+      // read.  Don't hesitate to link to permanent external resources
+      // that may provide greater detail:
+      //
+      // http://example.com/information_about_something/in_particular/
+
+      $parts = $this->foo($parts);
+
+
+
