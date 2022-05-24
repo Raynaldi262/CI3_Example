@@ -78,4 +78,50 @@
       $parts = $this->foo($parts);
 
 
+5. Constants
+	Constants follow the same guidelines as do variables, except constants should always be fully uppercase.
+	Always use CodeIgniter constants when appropriate, i.e. SLASH, LD, RD, PATH_CACHE, etc.
+	Example
+		Correct
+			MY_CONSTANT
+			NEWLINE
+			SUPER_CLASS_VERSION
+			$str = str_replace(LD.'foo'.RD, 'bar', $str);
+
+6. True, False, Null
+	TRUE, FALSE, and NULL keywords should always be fully uppercase
+	CORRECT
+		if ($foo == TRUE)
+		$bar = FALSE;
+		function foo($bar = NULL)
+
+7. Logical Operators
+	Use of the || “or” comparison operator is discouraged, as its clarity on some output devices is low (looking like the number 11, for instance). 
+	&& is preferred over AND but either are acceptable, 
+	and a space should always precede and follow !.
+	Correct
+		if ($foo OR $bar)
+		if ($foo && $bar) // recommended
+		if ( ! $foo)
+		if ( ! is_array($foo))
+	
+	// PENTINGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+8. Comparing return values and typecasting
+	Some PHP functions return FALSE on failure, but may also have a valid return value of “” or 0, which would evaluate to FALSE in loose comparisons
+	Use the same stringency in returning and checking your own variables. Use === and !== as necessary.
+		Correct
+			- if (strpos($str, 'foo') === FALSE)
+			
+			- function build_string($str = "")
+			  {
+					if ($str === "")
+					{
+
+					}
+			  }
+
+			- str = (string) $str; // cast $str as a string
+
+
+
 
