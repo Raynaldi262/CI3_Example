@@ -27,7 +27,11 @@
                 <td><?php echo $user->deleted_at ?></td>
                 <td><button type="submit" class="btn btn-primary"><?php echo anchor($uri = base_url('/detail/'.$user->id)) ?></button></td> 
                 <!-- <td><button type="submit" class="btn btn-primary"><?php echo anchor($uri = base_url('/user/detail/'.$user->id)) ?></button></td>  ini tanpa router --> 
-            </tr>
+            	
+				<!-- echo anchor('news/local/123', 'My News', 'title="News title"');
+				// Prints: <a href="http://example.com/index.php/news/local/123" title="News title">My News</a> -->
+
+			</tr>
             <?php endforeach;?>
         </tbody>
     </table>
