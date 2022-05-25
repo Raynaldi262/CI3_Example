@@ -14,10 +14,11 @@ class User_model extends CI_Model{
 
     public function insert_user() :int{     //cara ke 2
         $data = array(  
-            // 'name' =>  $this->input->post('name'),
-            // 'created_at' =>  $this->input->post('created_at'), 
-            'name' =>  $_POST['name'],
-            'created_at' =>  $_POST['created_at'],
+            'name' =>  $this->input->post('name'),
+            'created_at' =>  $this->input->post('created_at'), 
+		
+            //'name' =>  $_POST['name'],
+            //'created_at' =>  $_POST['created_at'],
         );
         
         $this->db->insert('users', $data);
