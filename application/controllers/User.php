@@ -74,8 +74,7 @@ class User extends CI_Controller{
                 redirect(base_url(),'refresh' );
             }else{
 				log_message('error', 'User not created.');
-				show_error('Error when insert user', 301, $heading = 'An Error Was Encountered')
-
+				show_error('Error when insert user', 301, $heading = 'An Error Was Encountered');
                 //show_error("Error when insert user", 301);
             }
         }else{

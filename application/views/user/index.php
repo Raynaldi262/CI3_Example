@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1> <?php echo $title ?> </h1>
+    <?php echo anchor('product/index', 'ADD PRODUCTS', 'title="News title"'); ?>
     <table>
         <thead>            
             <tr>
@@ -23,8 +24,8 @@
             <tr>
                 <td><?php echo $user->id ?></td>
                 <td><?php echo $user->name ?></td>
-                <td><?php echo $user->created_at ?></td>
-                <td><?php echo $user->deleted_at ?></td>
+                <td><?php echo date("j-n-Y",$user->created_at) ?></td>
+                <td><?php echo date("j-n-Y",$user->deleted_at) ?></td>
                 <td><button type="submit" class="btn btn-primary"><?php echo anchor($uri = base_url('/detail/'.$user->id)) ?></button></td> 
                 <!-- <td><button type="submit" class="btn btn-primary"><?php echo anchor($uri = base_url('/user/detail/'.$user->id)) ?></button></td>  ini tanpa router --> 
             	
